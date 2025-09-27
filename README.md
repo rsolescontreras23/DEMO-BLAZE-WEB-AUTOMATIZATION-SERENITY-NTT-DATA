@@ -11,7 +11,7 @@
 * Page Object (POM)
 
 ## Como ejecutar el proyecto
-> * Pagina a automatizar: https://magento.softwaretestingboard.com 
+> * Pagina a automatizar: [https://magento.softwaretestingboard.com ](https://www.demoblaze.com/index.html)
 > * Al descargar el proyecto actualizar el mvn con Syn Maven Projects
 > * Para limpiar el target ejecutar en la terminal el comando: mvn clean
 > * Para ejecutar desde la terminal: mvn clean verify
