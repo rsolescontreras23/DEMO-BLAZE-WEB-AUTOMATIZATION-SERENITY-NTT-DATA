@@ -4,7 +4,7 @@ import com.nttdata.pages.HomePage;
 import com.nttdata.questions.AlertaQuestion;
 import com.nttdata.questions.LoginQuestion;
 import com.nttdata.tasks.IniciarSesion;
-import io.cucumber.java.PendingException;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,15 +16,15 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.hamcrest.Matchers.equalTo;
 
-public class iniciarSesionStepDefinition {
-    @And("selecciona el item Log in para el regisrto de usuario")
+public class IniciarSesionStepDefinition {
+    @And("selecciona el item Log in para el inición de sesión")
     public void seleccionaElItemLogInParaElRegisrtoDeUsuario() {
         theActorInTheSpotlight().attemptsTo(Click.on(HomePage.ITM_LOG_IN));
     }
 
     @When("se logea ingresando nombre de usuario {string}  y contrasenia {string}")
-    public void seLogeaIngresandoNombreDeUsuarioYContrasenia(String username, String contrasenia) {
-        theActorInTheSpotlight().attemptsTo(IniciarSesion.withData(username, contrasenia));
+    public void seLogeaIngresandoNombreDeUsuarioYContrasenia(String username, String password) {
+        theActorInTheSpotlight().attemptsTo(IniciarSesion.withData(username, password));
     }
 
     @Then("se inicia sesión de manera exitosa")
@@ -39,5 +39,11 @@ public class iniciarSesionStepDefinition {
         theActorInTheSpotlight().should(
                 seeThat(AlertaQuestion.texto(), equalTo("User does not exist."))
         );
+    }
+
+
+    @When("inicia sesión ingresando el username {string} y la contraseña {string}")
+    public void iniciaSesiónIngresandoElUsernameYLaContraseña(String username, String password) {
+        theActorInTheSpotlight().attemptsTo(IniciarSesion.withData(username, password));
     }
 }

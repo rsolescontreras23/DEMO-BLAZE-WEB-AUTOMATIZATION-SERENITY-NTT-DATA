@@ -4,7 +4,7 @@ Feature: Iniciar sesión en la página web Demo Blaze
   @ESC01 @HappyPath @IniciarSesion
   Scenario Outline: Iniciar sesión con credenciales válidas.
     Given el actor ingresa a la página web de Demon Blaze
-    And selecciona el item Log in para el regisrto de usuario
+    And selecciona el item Log in para el inición de sesión
     When se logea ingresando nombre de usuario "<usuario>"  y contrasenia "<contrasenia>"
     Then se inicia sesión de manera exitosa
 
@@ -17,7 +17,7 @@ Feature: Iniciar sesión en la página web Demo Blaze
   @ESC02 @IniciarSesion
   Scenario Outline: Iniciar sesión con credenciales no existenes.
     Given el actor ingresa a la página web de Demon Blaze
-    And selecciona el item Log in para el regisrto de usuario
+    And selecciona el item Log in para el inición de sesión
     When se logea ingresando nombre de usuario "<usuario>"  y contrasenia "<contrasenia>"
     Then se muestra el mensaje de que el usuario no existe
 

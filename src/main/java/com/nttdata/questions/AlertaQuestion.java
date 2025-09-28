@@ -22,7 +22,9 @@ public class AlertaQuestion implements Question<String> {
     public String answeredBy (Actor actor) {
         WebDriverWait wait = new WebDriverWait(BrowseTheWeb.as(actor).getDriver(),  Duration.ofSeconds(30));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        return alert.getText();
+        String textoAlerta = alert.getText();
+        alert.accept();
+        return textoAlerta;
     }
 
 
